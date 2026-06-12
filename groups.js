@@ -115,7 +115,7 @@ async function getWorldCup() {
         "Bosnia & Herzegovina": "Bosnia & H.",
     };
     const groupsContainer = document.getElementById("groups");
-
+    console.log(groupMatches);
     groupsContainer.innerHTML = groups.map(group => {
 
         const teams = [...new Set(
@@ -172,7 +172,7 @@ async function getWorldCup() {
 
             return stats[b].gd - stats[a].gd;
         });
-       return `
+        return `
 <div class="group-card">
 
     <div class="card-inner">
@@ -180,8 +180,11 @@ async function getWorldCup() {
         <div class="card-front">
 
             <div class="group">
-                <h3>${group}</h3>
-
+            <div class="group-header">
+    <h3>${group}</h3>
+    <button class="flip-btn">See Results</button>
+</div>
+                
                 <div class="table-container">
                     <table>
                         <thead>
@@ -222,26 +225,96 @@ async function getWorldCup() {
         </div>
 
         <div class="card-back">
+        <div class="group-header">
              <h3>${group} Results</h3>
-
+             <button class="flip-btn">Table</button>
+</div>
     ${groupMatches
-        .filter(match => match.group === group)
-        .map(match => `
-            <p>
-                ${match.team1}
-                ${match.score?.ft ? match.score.ft[0] : "-"}
-                :
-                ${match.score?.ft ? match.score.ft[1] : "-"}
-                ${match.team2}
-            </p>
+                .filter(match => match.group === group)
+                .map(match => `
+           <p class="match-result"
+    data-team1="${match.team1}"
+    data-team2="${match.team2}"
+    data-date="${match.date}"
+    data-ground="${match.ground || 'TBD'}"
+    data-goals1='${JSON.stringify(match.goals1 || [])}'
+    data-goals2='${JSON.stringify(match.goals2 || [])}'
+    data-score1='${match.score?.ft ? match.score.ft[0] : "-"}'
+    data-score2='${match.score?.ft ? match.score.ft[1] : "-"}'
+>
+    ${match.team1}
+    ${match.score?.ft ? match.score.ft[0] : "-"}
+    :
+    ${match.score?.ft ? match.score.ft[1] : "-"}
+    ${match.team2}
+</p>
         `).join("")}
         </div>
 
     </div>
 
 </div>
-`;
+`
     }).join("");
+    document.querySelectorAll(".flip-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+            const card = btn.closest(".group-card");
+            card.classList.toggle("flipped");
+        });
+    });
+    document.querySelectorAll(".match-result").forEach(match => {
+    match.addEventListener("click", () => {
+
+        const team1 = match.dataset.team1;
+        const team2 = match.dataset.team2;
+        const date = match.dataset.date;
+        const ground = match.dataset.ground;
+
+        const score1 = match.dataset.score1;
+        const score2 = match.dataset.score2;
+
+        const goals1 = JSON.parse(match.dataset.goals1 || "[]");
+        const goals2 = JSON.parse(match.dataset.goals2 || "[]");
+
+        const scorers1 = goals1.map(goal =>
+            `<p>⚽ ${goal.name} ${goal.minute}'</p>`
+        ).join("");
+
+       const scorers2 = goals2.map(goal =>
+    `<p>⚽ ${goal.name} ${goal.minute}'</p>`
+).join("");
+
+document.getElementById("popup-content").innerHTML = `
+<h2>${team1} ${score1}:${score2} ${team2}</h2>
+
+<div class="match-info">
+    <span>📅 ${date}</span>
+    <span>🏟️ ${ground}</span>
+</div>
+
+<div class="teams-container">
+
+    <div class="team-column">
+        
+        ${scorers1 || "<p>No goals</p>"}
+    </div>
+
+    <div class="team-column">
+        
+        ${scorers2 || "<p>No goals</p>"}
+    </div>
+
+</div>
+`;
+
+document.getElementById("popup").style.display = "flex";
+    });
+});
+
+document.getElementById("popup").addEventListener("click", () => {
+    document.getElementById("popup").style.display = "none";
+});
+
 }
 
 getWorldCup();

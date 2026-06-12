@@ -11,7 +11,7 @@ body h1 {
   font-size: 50px;
 }
 body h1:hover {
-  color: #d6b314;
+  color: #aaaaa8;
   transition: color 0.3s;
 }
 
@@ -29,7 +29,6 @@ body p:hover {
   display: flex;
   justify-content: space-between;
   margin: 20px;
-  
 }
 #back-button {
   display: flex;
@@ -65,21 +64,21 @@ body p:hover {
   background: #326107;
 }
 .group-card {
-    perspective: 1000px;
-    position: relative;
-   height: 300px;
+  perspective: 1000px;
+  position: relative;
+  height: 300px;
 }
 
 .card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
 }
 
-.group-card:hover .card-inner {
-    transform: rotateY(180deg);
+.group-card.flipped .card-inner {
+  transform: rotateY(180deg);
 }
 
 .card-front,
@@ -89,21 +88,22 @@ body p:hover {
   left: 0;
   width: 100%;
   height: 100%;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .card-back {
-    transform: rotateY(180deg);
-    color: rgb(255, 255, 255);
-    background: rgb(0, 0, 0) !important;
-    height: 100%;
-    border-radius: 20px;
-  }
-  .card-back h3,p{
-    display: flex;
-    justify-content: center;
-  }
+  transform: rotateY(180deg);
+  color: rgb(255, 255, 255);
+  background: rgb(0, 0, 0) !important;
+  height: 100%;
+  border-radius: 20px;
+}
+.card-back h3,
+p {
+  display: flex;
+  justify-content: center;
+}
 #groups {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -132,7 +132,26 @@ body p:hover {
   margin-bottom: 20px;
   color: #000000;
 }
+.group-header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 15px;
+  width: 100%;
+}
 
+.flip-btn {
+  background: #333;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.flip-btn:hover {
+  background: #555;
+}
 table {
   width: 100%;
   border-collapse: collapse;
@@ -189,4 +208,63 @@ tr:hover {
 
 .team-cell span {
   white-space: nowrap;
+}
+#popup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+#popup-content {
+  background: #222;
+  color: white;
+  padding: 25px;
+  border-radius: 15px;
+  width: 500px;
+  max-width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  text-align: center;
+}
+
+#popup-content h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+#popup-content p {
+  margin: 5px 0;
+}
+.match-info {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.teams-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.team-column {
+  flex: 1;
+}
+
+.team-column h3 {
+  text-align: center;
+  color: gold;
+  margin-bottom: 15px;
+}
+
+.team-column p {
+  text-align: left;
 }
