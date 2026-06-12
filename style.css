@@ -1,0 +1,63 @@
+body{
+    background-color: #000000;
+    font-family:segoe ui,sans-serif;
+    opacity: 1;
+    transition: all 0.8s ease;
+}
+.fade-out{
+    opacity: 0;
+transform: scale(1.1);
+}
+.trophy{
+    cursor: pointer;
+    transition: .3s ;
+}
+.trophy:hover{
+    transform: scale(1.05);
+}
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+}
+img:hover{
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+}
+h1{
+    font-size: 70px;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 50px;
+    transform: scale(1.2);
+    animation: slideIn 7s ease;
+}
+.host{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;  
+    gap: 60px;
+  
+}
+.host img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+.host a{
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 20px;
+}
+p{
+    color: #ffffff;
+    text-align: center;
+    margin-top: 20px;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}

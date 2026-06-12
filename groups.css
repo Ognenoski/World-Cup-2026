@@ -1,0 +1,192 @@
+body {
+  background: #111;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+body h1 {
+  text-align: center;
+  margin-top: 50px;
+  color: #ffffff;
+
+  font-size: 50px;
+}
+body h1:hover {
+  color: #d6b314;
+  transition: color 0.3s;
+}
+
+body a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 30px;
+}
+body p:hover {
+  color: #646464;
+  transition: color 0.3s;
+}
+
+#button-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+  
+}
+#back-button {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 20px;
+}
+#back-button:hover {
+  background: #883330;
+}
+#knockout-stage {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px 20px;
+  margin: 0;
+  padding: 10px 20px;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#knockout-stage:hover {
+  background: #326107;
+}
+.group-card {
+    perspective: 1000px;
+    position: relative;
+   height: 300px;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.group-card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+    color: rgb(255, 255, 255);
+    background: rgb(0, 0, 0) !important;
+    height: 100%;
+    border-radius: 20px;
+  }
+  .card-back h3,p{
+    display: flex;
+    justify-content: center;
+  }
+#groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 25px;
+  max-width: 1500px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.group {
+  background: rgb(255, 255, 255);
+  color: black;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
+}
+
+.group:hover {
+  transform: translateY(-5px);
+}
+
+.group h3 {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #000000;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background: rgb(0, 0, 0);
+  color: white;
+  padding: 8px;
+  font-size: 14px;
+  padding: 8px 4px;
+  font-size: 13px;
+}
+
+td {
+  padding: 6px;
+  text-align: center;
+  font-size: 14px;
+  padding: 8px 4px;
+  font-size: 13px;
+}
+
+td:first-child,
+th:first-child {
+  text-align: left;
+  white-space: nowrap;
+  width: 150px;
+}
+
+td img {
+  width: 22px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+tr:nth-child(even) {
+  background: rgb(255, 255, 255);
+}
+
+tr:hover {
+  background: rgb(245, 245, 245);
+}
+.team-cell {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.team-cell img {
+  width: 24px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.team-cell span {
+  white-space: nowrap;
+}
