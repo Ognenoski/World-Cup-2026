@@ -223,7 +223,7 @@ tr.playoff td {
   white-space: nowrap;
 }
 #popup {
-  display: none;
+  display: flex;
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.7);
@@ -235,13 +235,11 @@ tr.playoff td {
 #popup-content {
   background: #222;
   color: white;
-  padding: 25px;
+  padding: 20px;
   border-radius: 15px;
-  width: 500px;
-  max-width: 90%;
-  max-height: 80vh;
-  overflow-y: auto;
-  text-align: center;
+  width: 90%;
+  max-width: 700px;
+ box-sizing: border-box;
 }
 
 #popup-content h2 {
@@ -330,4 +328,17 @@ tr.playoff td {
 #third-place-table tr:hover {
     background: #eaeaea;
 }
-
+@media screen and (max-width: 600px){
+  #popup {
+width: 100%;
+  }
+}
+@media screen and (max-width: 500px) {
+#third-place-table table{
+  width: 100%;
+}
+  #third-place-table, #popup {
+    width: 100%
+  }
+ 
+}
