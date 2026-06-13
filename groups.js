@@ -46,14 +46,12 @@ async function getWorldCup() {
         "Sweden": "se",
         "Turkey": "tr",
         "Greece": "gr",
-
         "USA": "us",
         "Canada": "ca",
         "Costa Rica": "cr",
         "Panama": "pa",
         "Jamaica": "jm",
         "Honduras": "hn",
-
         "Japan": "jp",
         "Australia": "au",
         "Iran": "ir",
@@ -64,7 +62,6 @@ async function getWorldCup() {
         "Uzbekistan": "uz",
         "Jordan": "jo",
         "China": "cn",
-
         "Morocco": "ma",
         "Senegal": "sn",
         "Nigeria": "ng",
@@ -75,7 +72,6 @@ async function getWorldCup() {
         "Ghana": "gh",
         "Ivory Coast": "ci",
         "Mali": "ml",
-
         "Uruguay": "uy",
         "Colombia": "co",
         "Ecuador": "ec",
@@ -86,27 +82,17 @@ async function getWorldCup() {
         "Bolivia": "bo",
         "South Korea": "kr",
         "Korea Republic": "kr",
-
         "Czech Republic": "cz",
-
         "Bosnia & Herzegovina": "ba",
         "Bosnia and Herzegovina": "ba",
-
         "Haiti": "ht",
-
         "Scotland": "gb-sct",
-
         "New Zealand": "nz",
-
         "DR Congo": "cd",
         "Congo DR": "cd",
-
         "Curacao": "cw",
-
         "USA": "us",
         "United States": "us",
-
-
         "Curacao": "cw",
         "Curaçao": "cw",
         "Cape Verde": "cv"
@@ -115,7 +101,6 @@ async function getWorldCup() {
         "Bosnia & Herzegovina": "Bosnia & H.",
     };
     const groupsContainer = document.getElementById("groups");
-    console.log(groupMatches);
     groupsContainer.innerHTML = groups.map(group => {
 
         const teams = [...new Set(
