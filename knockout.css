@@ -1,0 +1,22 @@
+.coming-soon {
+    text-align: center;
+    margin-top: 100px;
+    color: white;
+}
+
+.coming-soon h2 {
+    font-size: 50px;
+    margin-bottom: 20px;
+    animation: pulse 2s infinite;
+}
+
+.coming-soon p {
+    font-size: 22px;
+    color: #ccc;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
