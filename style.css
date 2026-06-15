@@ -1,63 +1,105 @@
-body{
-    background-color: #000000;
-    font-family:segoe ui,sans-serif;
-    opacity: 1;
-    transition: all 0.8s ease;
+body {
+  background-color: #000000;
+  font-family:
+    segoe ui,
+    sans-serif;
+  opacity: 1;
+  transition: all 0.8s ease;
 }
-.fade-out{
-    opacity: 0;
-transform: scale(1.1);
+.fade-out {
+  opacity: 0;
+  transform: scale(1.1);
 }
-.trophy{
-    cursor: pointer;
-    transition: .3s ;
+.entry { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin-left: -30px;
 }
-.trophy:hover{
-    transform: scale(1.05);
+
+.arrow {
+    position: static;
+  color: #ffffff;
+  font-size: 50px;
+  margin-right: -20px;
+  opacity: 0;
+  animation:
+    showText 1s forwards,
+    arrowMove 1s infinite alternate 2s;
 }
-img{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 30%;
+.trophy {
+    width: 250px;
+  cursor: pointer;
+  transition: 0.3s;
 }
-img:hover{
-    transform: scale(0.95);
-    transition: transform 0.3s ease;
+.trophy:hover {
+  transform: scale(1.05);
 }
-h1{
-    font-size: 70px;
-    color: #ffffff;
-    text-align: center;
-    margin-top: 50px;
-    transform: scale(1.2);
-    animation: slideIn 7s ease;
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
 }
-.host{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;  
-    gap: 60px;
-  
+img:hover {
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
 }
-.host img{
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
+h1 {
+  font-size: 70px;
+  color: #ffffff;
+  text-align: center;
+  margin-top: 50px;
+  transform: scale(1.2);
+  animation: slideIn 7s ease;
 }
-.host a{
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 20px;
+.host {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
 }
-p{
-    color: #ffffff;
-    text-align: center;
-    margin-top: 20px;
+.host img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+.host a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 20px;
+}
+p {
+  color: #ffffff;
+  text-align: center;
+  margin-top: 20px;
 }
 
 @keyframes slideIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes arrowMove {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(15px);
+  }
+}
+@keyframes showText {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }

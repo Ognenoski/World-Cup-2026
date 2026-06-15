@@ -321,8 +321,8 @@ async function getWorldCup() {
 <tr>
  <th>Team</th>
  <th></th>
- <th>Pts</th>
  <th>GD</th>
+ <th>Pts</th>
 </tr>
 </thead>
 
@@ -336,8 +336,8 @@ ${thirdPlacedTeams.map((team, index) => `
         <span>${displayNames[team.team] || team.team}</span>
     </div></td>
     <td></td>
-<td>${team.pts}</td>
 <td>${team.gd}</td>
+<td>${team.pts}</td>
 </tr>
 `).join("")}
 </tbody>

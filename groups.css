@@ -223,7 +223,7 @@ tr.playoff td {
   white-space: nowrap;
 }
 #popup {
-  display: flex;
+  display: none;
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.7);
@@ -337,7 +337,7 @@ width: 100%;
 #third-place-table table{
   width: 100%;
 }
-  #third-place-table, #popup {
+  #third-place-table {
     width: 100%
   }
  
