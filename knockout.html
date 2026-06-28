@@ -1,22 +1,70 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Knockout Matches</title>
+    <title>World Cup 2026 | Knockout Stage</title>
+
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="knockout.css">
-    <link rel="icon" href="logo.png">
 </head>
+
 <body>
-    <h1>Knockout Stage</h1>
-    <button id="back" onclick="window.location.href='groups.html'">Back</button>
 
-<div class="coming-soon">
-    <h2>🚧 Coming Soon 🚧</h2>
-    <p>The knockout stage will be available after the group stage is completed.</p>
-</div>
+<header class="header">
 
+    <h1>🏆 FIFA World Cup 2026</h1>
 
+    <a href="groups.html" class="back-btn">
+        ← Back to Groups
+    </a>
 
-<script defer src="knockout.js"></script>
+</header>
+
+<main class="bracket">
+
+    <!-- Round of 32 -->
+    <section class="round">
+        <h2>Round of 32</h2>
+        <div id="round32" class="matches"></div>
+    </section>
+
+    <!-- Round of 16 -->
+    <section class="round">
+        <h2>Round of 16</h2>
+        <div id="round16" class="matches"></div>
+    </section>
+
+    <!-- Quarter Finals -->
+    <section class="round">
+        <h2>Quarter Finals</h2>
+        <div id="quarter" class="matches"></div>
+    </section>
+
+    <!-- Semi Finals -->
+    <section class="round">
+        <h2>Semi Finals</h2>
+        <div id="semi" class="matches"></div>
+    </section>
+
+    <!-- Final -->
+    <section class="round">
+        <h2>Final</h2>
+        <div id="final" class="matches"></div>
+    </section>
+
+    <!-- Champion -->
+    <section class="round champion-round">
+        <h2>Champion</h2>
+
+        <div id="champion" class="champion">
+            🏆
+        </div>
+    </section>
+
+</main>
+
+<script src="knockout.js"></script>
+
 </body>
 </html>
