@@ -12,54 +12,78 @@
 <body>
 
 <header class="header">
-
     <h1>🏆 FIFA World Cup 2026</h1>
 
     <a href="groups.html" class="back-btn">
         ← Back to Groups
     </a>
-
 </header>
 
 <main class="bracket">
 
-    <!-- Round of 32 -->
-    <section class="round">
-        <h2>Round of 32</h2>
-        <div id="round32" class="matches"></div>
-    </section>
+    <section class="bracket-side bracket-left">
 
-    <!-- Round of 16 -->
-    <section class="round">
-        <h2>Round of 16</h2>
-        <div id="round16" class="matches"></div>
-    </section>
-
-    <!-- Quarter Finals -->
-    <section class="round">
-        <h2>Quarter Finals</h2>
-        <div id="quarter" class="matches"></div>
-    </section>
-
-    <!-- Semi Finals -->
-    <section class="round">
-        <h2>Semi Finals</h2>
-        <div id="semi" class="matches"></div>
-    </section>
-
-    <!-- Final -->
-    <section class="round">
-        <h2>Final</h2>
-        <div id="final" class="matches"></div>
-    </section>
-
-    <!-- Champion -->
-    <section class="round champion-round">
-        <h2>Champion</h2>
-
-        <div id="champion" class="champion">
-            🏆
+        <div class="round round-32">
+            <h2>Round of 32</h2>
+            <div id="round32-left" class="matches"></div>
         </div>
+
+        <div class="round round-16">
+            <h2>Round of 16</h2>
+            <div id="round16-left" class="matches"></div>
+        </div>
+
+        <div class="round quarter-round">
+            <h2>Quarter Finals</h2>
+            <div id="quarter-left" class="matches"></div>
+        </div>
+
+        <div class="round semi-round">
+            <h2>Semi Final</h2>
+            <div id="semi-left" class="matches"></div>
+        </div>
+
+    </section>
+
+    <section class="center-stage">
+
+        <div class="round final-round">
+            <h2>Final</h2>
+            <div id="final" class="matches"></div>
+        </div>
+
+        <div class="champion-section">
+            <h2>Champion</h2>
+
+            <div id="champion" class="champion">
+                🏆
+            </div>
+        </div>
+
+    </section>
+
+    <section class="bracket-side bracket-right">
+
+        <div class="round semi-round">
+            <h2>Semi Final</h2>
+            <div id="semi-right" class="matches"></div>
+        </div>
+
+        <div class="round quarter-round">
+            <h2>Quarter Finals</h2>
+            <div id="quarter-right" class="matches"></div>
+        </div>
+
+        <div class="round round-16">
+            <h2>Round of 16</h2>
+            <div id="round16-right" class="matches"></div>
+        </div>
+
+        <div class="round round-32">
+            <h2>Round of 32</h2>
+            <div id="round32-right" class="matches"></div>
+        </div>
+
     </section>
 
 </main>
