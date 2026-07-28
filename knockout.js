@@ -339,9 +339,7 @@ function renderChampion(finalMatches) {
         <div>
             <div>🏆</div>
             <div class="champion-name">${champion}</div>
-            <div style="margin-top:10px;font-size:18px;">
-              <img src="https://flagcdn.com/48x36/${flags[team] || 'us'}.png">
-                                            <span>${displayNames[team] || team}</span>
+            <div style="margin-top:10px;font-size:18px;">        
             </div>
         </div>
     `;
