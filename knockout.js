@@ -66,8 +66,21 @@ function renderRound(matches, containerId) {
 
         card.className = "match";
 
-        const score1 = match.score?.ft?.[0] ?? "-";
-        const score2 = match.score?.ft?.[1] ?? "-";
+        let score1 = match.score?.ft?.[0] ?? "-";
+        let score2 = match.score?.ft?.[1] ?? "-";
+
+        if (
+            match.round === "Final" &&
+            score1 !== "-" &&
+            score2 !== "-" &&
+            score1 === score2
+        ) {
+            if (match.goals1?.length > 0) {
+                score1++;
+            } else if (match.goals2?.length > 0) {
+                score2++;
+            }
+        }
 
         const team1 = match.team1 || "TBD";
         const team2 = match.team2 || "TBD";
@@ -306,26 +319,33 @@ function renderChampion(finalMatches) {
     }
 
     const finalMatch = finalMatches[0];
-    const score = finalMatch.score?.ft;
 
-    if (!score || score[0] === score[1]) {
-        championContainer.innerHTML = "🏆";
-        return;
+    let score1 = finalMatch.score?.ft?.[0] ?? 0;
+    let score2 = finalMatch.score?.ft?.[1] ?? 0;
+
+    if (score1 === score2) {
+        if (finalMatch.goals1?.length > 0) {
+            score1++;
+        } else if (finalMatch.goals2?.length > 0) {
+            score2++;
+        }
     }
 
-    const champion =
-        score[0] > score[1]
-            ? finalMatch.team1
-            : finalMatch.team2;
+    const champion = score1 > score2
+        ? finalMatch.team1
+        : finalMatch.team2;
 
     championContainer.innerHTML = `
         <div>
             <div>🏆</div>
-            <div class="champion-name">
-                ${champion}
+            <div class="champion-name">${champion}</div>
+            <div style="margin-top:10px;font-size:18px;">
+              <img src="https://flagcdn.com/48x36/${flags[team] || 'us'}.png">
+                                            <span>${displayNames[team] || team}</span>
             </div>
         </div>
     `;
 }
+
 
 getKnockout();
